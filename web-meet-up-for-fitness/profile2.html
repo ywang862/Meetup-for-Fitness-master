@@ -1,0 +1,517 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html">
+    <link rel="stylesheet" type="text/css" media="all" href="css/styles.css">
+    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+</head>
+<body>
+  <div id="w">
+    <div id="content" class="clearfix">
+      <div id="userphoto"><img src="img/profile_pics.jpg" alt="default avatar" height="180" width="180"></div>
+      <h1>My Profile</h1>
+      <nav id="profiletabs">
+        <ul class="clearfix">
+          <li><a href="#bio" class="sel">Bio</a></li>
+          <li><a href="#notification">Activity</a></li>
+          <li><a href="#friends">Friends</a></li>
+          <li><a href="#team">My Team</a></li>
+          <li><a href="#addfriend">Add New Friend</a></li>
+        </ul>
+      </nav>
+
+      <section id="bio">
+        <p class = "activity">Personal Information:</p>
+        <p id = "username" class = "activity"> </p>
+        <p id = "email" class = "activity"> </p>
+        <p id = "gender" class = "activity"> </p>
+      </section>
+
+      <section id="notification" class="hidden">
+        <p class = "activity">My Notifications: </p>
+        <p id = "notification_name" class = "activity"> </p>
+
+      </section>
+
+      <section id="friends" class="hidden">
+        <p class = "activity">My friends:</p>
+        <p id = "friend_name" class = "activity"> </p>
+
+      </section>
+
+      <section id="team" class="hidden">
+        <p class = "activity">My Team:</p>
+        <p id = "team_name" class = "activity"> </p>
+
+      </section>
+
+
+      <section id="addfriend" class="hidden">
+        <p class = "activity">Add New Friend </p>
+        <div class="form-group">
+            <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-hand-up"></i></span>
+            <input id= "friendidd" name="friendname" placeholder="enter friend id please" class="form-control" type="text">
+            <button type="submit" id="submit_friend_request_button" class="button button1"> Find Friend <span class="glyphicon glyphicon-send"></span></button>
+            </div>
+            </div>
+        </div>
+        <p id = "potential_friend" class = "activity"> </p>
+      </section>
+
+    </div><!-- @end #content -->
+  </div><!-- @end #w -->
+<script type="text/javascript">
+$(function(){
+  $('#profiletabs ul li a').on('click', function(e){
+    e.preventDefault();
+    var newcontent = $(this).attr('href');
+
+    $('#profiletabs ul li a').removeClass('sel');
+    $(this).addClass('sel');
+
+    $('#content section').each(function(){
+      if(!$(this).hasClass('hidden')) { $(this).addClass('hidden'); }
+    });
+
+    $(newcontent).removeClass('hidden');
+  });
+});
+</script>
+
+<script>
+      function getQueryVariable(variable)
+    {
+       var query = window.location.search.substring(1);
+       var vars = query.split("&");
+       for (var i=0;i<vars.length;i++) {
+               var pair = vars[i].split("=");
+               if(pair[0] == variable){return pair[1];}
+       }
+       return(false);
+    }
+    var userID = getQueryVariable("userId");
+    var result;
+     $.ajax({
+               "dataType": "json",
+                "async": false,
+                "crossDomain": true,
+                "url": "http://@ec2-52-7-74-13.compute-1.amazonaws.com/friends/" + userID,
+                "method": "GET",
+                "headers": {
+                    "content-type": "application/json",
+                },
+                "processData": false,
+                success: function(data){
+                    result = data;
+                },
+
+                error: function(jqxhr, textStatus, errorThrown){
+                    console.log("error");
+                    console.log(textStatus);
+                    console.log(errorThrown);
+
+                }
+        });
+
+        var x = document.getElementById("friend_name");
+        var p;
+        var text;
+        for (var i = 0; i < result['Friends List'].length; i++)
+        {
+          //p = document.createElement("P");
+          p = document.createElement("P");
+          text = document.createTextNode(result['Friends List'][i]['username'])
+          p.append(text);
+          x.append(p);
+        }
+</script>
+
+
+
+<script>
+      function getQueryVariable(variable)
+    {
+       var query = window.location.search.substring(1);
+       var vars = query.split("&");
+       for (var i=0;i<vars.length;i++) {
+               var pair = vars[i].split("=");
+               if(pair[0] == variable){return pair[1];}
+       }
+       return(false);
+    }
+    var userID = getQueryVariable("userId");
+
+    var result;
+     $.ajax({
+               "dataType": "json",
+                "async": false,
+                "crossDomain": true,
+                "url": "http://@ec2-52-7-74-13.compute-1.amazonaws.com/user/info/" + userID,
+                "method": "GET",
+                "headers": {
+                    "content-type": "application/json",
+                },
+                "processData": false,
+                success: function(data){
+                    result = data;
+                },
+
+                error: function(jqxhr, textStatus, errorThrown){
+                    console.log("error");
+                    console.log(textStatus);
+                    console.log(errorThrown);
+
+                }
+        });
+        console.log(result);
+        var x = document.getElementById("username");
+        var p = document.createElement("P");
+        text = document.createTextNode("username: " + result['Info']['username'])
+        p.append(text);
+        x.append(p);
+
+        var p2 = document.createElement("P");
+        text2 = document.createTextNode("email: " + result['Info']['email'])
+        p2.append(text2);
+        x.append(p2);
+
+        var p3 = document.createElement("P");
+        text3 = document.createTextNode("gender: " + result['Info']['gender'])
+        p3.append(text3);
+        x.append(p3);
+
+
+
+</script>
+
+
+
+<script>
+        function getQueryVariable(variable)
+    {
+       var query = window.location.search.substring(1);
+       var vars = query.split("&");
+       for (var i=0;i<vars.length;i++) {
+               var pair = vars[i].split("=");
+               if(pair[0] == variable){return pair[1];}
+       }
+       return(false);
+    }
+    var userID = getQueryVariable("userId");
+    var result;
+     $.ajax({
+               "dataType": "json",
+                "async": false,
+                "crossDomain": true,
+                "url": "http://@ec2-52-7-74-13.compute-1.amazonaws.com/teams/" + userID,
+                "method": "GET",
+                "headers": {
+                    "content-type": "application/json",
+                },
+                "processData": false,
+                success: function(data){
+                    result = data;
+                },
+
+                error: function(jqxhr, textStatus, errorThrown){
+                    console.log("error");
+                    console.log(textStatus);
+                    console.log(errorThrown);
+
+                }
+        });
+
+        var x = document.getElementById("team_name");
+        var p;
+        var text;
+        for (var i = 0; i < result['Team List'].length; i++)
+        {
+          //p = document.createElement("P");
+          p = document.createElement("P");
+          text = document.createTextNode(result['Team List'][i]['tname'])
+          p.append(text);
+          x.append(p);
+        }
+</script>
+
+
+
+<script>
+    function getQueryVariable(variable)
+    {
+       var query = window.location.search.substring(1);
+       var vars = query.split("&");
+       for (var i=0;i<vars.length;i++) {
+               var pair = vars[i].split("=");
+               if(pair[0] == variable){return pair[1];}
+       }
+       return(false);
+    }
+
+    function sendrequest(variable)
+    {
+
+      var userId = getQueryVariable("userId");
+      var formData = {
+                "friendId": JSON.stringify(variable),
+      }
+      console.log(JSON.stringify(formData));
+
+     $.ajax({
+//                "dataType": "json",
+                "data" : JSON.stringify(formData),
+                "async": false,
+                "crossDomain": true,
+                "url": "http://@ec2-52-7-74-13.compute-1.amazonaws.com/friends/add/" + userId,
+                "method": "POST",
+                "headers": {
+                    "content-type": "application/json",
+                },
+
+                "processData": false,
+                success: function(data){
+                    console.log(data);
+                },
+
+                error: function(jqxhr, textStatus, errorThrown){
+                    console.log("error");
+                    console.log(textStatus);
+                    console.log(errorThrown);
+
+                }
+        });
+    return false;
+    }
+    var userID = getQueryVariable("userId");
+    var result;
+     $.ajax({
+               "dataType": "json",
+                "async": false,
+                "crossDomain": true,
+                "url": "http://@ec2-52-7-74-13.compute-1.amazonaws.com/notification/" + userID,
+                "method": "GET",
+                "headers": {
+                    "content-type": "application/json",
+                },
+                "processData": false,
+                success: function(data){
+                    result = data;
+                },
+
+                error: function(jqxhr, textStatus, errorThrown){
+                    console.log("error");
+                    console.log(textStatus);
+                    console.log(errorThrown);
+
+                }
+        });
+     console.log(result['notifications'][i]['senderId']);
+        var x = document.getElementById("notification_name");
+        var p;
+        var text;
+        var button;
+        var senderidd =  result['notifications'][i]['senderId'];
+        for (var i = 0; i < result['notifications'].length; i++)
+        {
+          p = document.createElement("P");
+          if (!result['notifications'][0]['teamId']) {
+            text = document.createTextNode(result['notifications'][i]['username'][0] + " has send you a friend request————");
+          } else {
+            text = document.createTextNode(result['notifications'][i]['tName'][0] + " has send you a team request—————");
+          }
+
+          button = document.createElement("BUTTON");
+          button.setAttribute("value", senderidd);
+          button.setAttribute("id", senderidd);
+          button.appendChild(document.createTextNode('Accept'));
+          button.setAttribute("onClick", "this.disabled=true; this.appendChild(document.createTextNode('ed')); sendrequest(value)");
+          p.append(text);
+          p.append(button);
+          x.append(p);
+        }
+</script>
+
+
+
+<script>
+        function getQueryVariable(variable)
+    {
+       var query = window.location.search.substring(1);
+       var vars = query.split("&");
+       for (var i=0;i<vars.length;i++) {
+               var pair = vars[i].split("=");
+               if(pair[0] == variable){return pair[1];}
+       }
+       return(false);
+    }
+    var userID = getQueryVariable("userId");
+    var result;
+     $.ajax({
+               "dataType": "json",
+                "async": false,
+                "crossDomain": true,
+                "url": "http://@ec2-52-7-74-13.compute-1.amazonaws.com/teams/" + userID,
+                "method": "GET",
+                "headers": {
+                    "content-type": "application/json",
+                },
+                "processData": false,
+                success: function(data){
+                    result = data;
+                },
+
+                error: function(jqxhr, textStatus, errorThrown){
+                    console.log("error");
+                    console.log(textStatus);
+                    console.log(errorThrown);
+
+                }
+        });
+
+        var x = document.getElementById("team_name");
+        var p;
+        var text;
+        for (var i = 0; i < result['Team List'].length; i++)
+        {
+          //p = document.createElement("P");
+          p = document.createElement("P");
+          text = document.createTextNode(result['Team List'][i]['tname'])
+          p.append(text);
+          x.append(p);
+        }
+</script>
+
+
+
+<script type="text/javascript" >
+// get potential friend list
+    $(document).ready(function() {
+    document.getElementById ("submit_friend_request_button").addEventListener("click", submit_new_friend_request, false);
+
+});
+
+  function getQueryVariable(variable)
+{
+       var query = window.location.search.substring(1);
+       var vars = query.split("&");
+       for (var i=0;i<vars.length;i++) {
+               var pair = vars[i].split("=");
+               if(pair[0] == variable){return pair[1];}
+       }
+       return(false);
+}
+
+
+ function sendrequest2(value,id) {
+      var userId = getQueryVariable("userId");
+      var formData = {
+        "receiverId": value,
+        "teamId": JSON.stringify(-1),
+        "senderId": userId,
+      }
+     $.ajax({
+        "data" : JSON.stringify(formData),
+        "async": false,
+        "crossDomain": true,
+        "url": "http://@ec2-52-7-74-13.compute-1.amazonaws.com/notification/add",
+        "method": "POST",
+        "headers": {
+          "content-type": "application/json",
+        },
+        "processData": false,
+        success: function(data){
+          console.log(data);
+          if(JSON.stringify(data)) {
+            alert("Your friend request is sent successfully, please refresh page");
+          }
+        },
+        error: function(jqxhr, textStatus, errorThrown){
+          console.log("error");
+          console.log(textStatus);
+          console.log(errorThrown);
+
+        }
+      });
+    return false;
+ }
+
+function submit_new_friend_request()
+{
+  var userId = getQueryVariable("userId");
+  var formData = {
+    "uName": $("#friendidd").val(),
+  }
+  var result;
+  $.ajax({
+    "data" : JSON.stringify(formData),
+    "async": false,
+    "crossDomain": true,
+    "url": "http://@ec2-52-7-74-13.compute-1.amazonaws.com/friends/search",
+    "method": "POST",
+    "headers": {
+      "content-type": "application/json",
+    },
+    "processData": false,
+    success: function(data){
+      result = data;
+    },
+    error: function(jqxhr, textStatus, errorThrown){
+      console.log("error");
+      console.log(textStatus);
+      console.log(errorThrown);
+    }
+  });
+  var x = document.getElementById("potential_friend");
+  var p;
+  var text;
+  var frienddid;
+  for (var i = 0; i < result['userNameList'].length; i++) {
+    p = document.createElement("P");
+    text = document.createTextNode(result['userNameList'][i]['username']);
+    frienddid = result['userNameList'][i]['userId'];
+    button2 = document.createElement("BUTTON");
+    button2.setAttribute("value", frienddid);
+    button2.setAttribute("id", frienddid);
+    button2.appendChild(document.createTextNode('Add'));
+    button2.setAttribute("onClick", "this.disabled=true; this.appendChild(document.createTextNode('ed')); sendrequest2(value, id)");
+    p.append(text);
+    p.append("_____");
+    p.append(button2);
+    x.append(p);
+    }
+  }
+</script>
+
+<style type="text/css">
+
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 3px 6px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+  .button1 {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #4CAF50;
+}
+
+.button1:hover {
+    background-color: #4CAF50;
+    color: white;
+}
+
+</style>>
+</body>
+</html>

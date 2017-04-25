@@ -1,7 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -16,12 +20,36 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundIamge" translatesAutoresizingMaskIntoConstraints="NO" id="MdC-LQ-tIi">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AppLogo" translatesAutoresizingMaskIntoConstraints="NO" id="DP6-jg-HKz">
+                                <rect key="frame" x="43" y="251" width="288" height="164"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="164" id="0Ge-oj-LKl"/>
+                                    <constraint firstAttribute="width" constant="288" id="67L-aG-OhL"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="DP6-jg-HKz" firstAttribute="centerX" secondItem="MdC-LQ-tIi" secondAttribute="centerX" id="43E-X7-WAz"/>
+                            <constraint firstItem="MdC-LQ-tIi" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="U7c-nW-1wu"/>
+                            <constraint firstAttribute="trailing" secondItem="MdC-LQ-tIi" secondAttribute="trailing" id="dUC-eP-u9W"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="MdC-LQ-tIi" secondAttribute="bottom" id="h5j-f2-ZR4"/>
+                            <constraint firstItem="MdC-LQ-tIi" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="mlp-Oa-qbN"/>
+                            <constraint firstItem="DP6-jg-HKz" firstAttribute="centerY" secondItem="MdC-LQ-tIi" secondAttribute="centerY" id="wOb-uH-auC"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="-23.199999999999999" y="398.95052473763121"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="AppLogo" width="500" height="146"/>
+        <image name="backgroundIamge" width="640" height="1136"/>
+    </resources>
 </document>

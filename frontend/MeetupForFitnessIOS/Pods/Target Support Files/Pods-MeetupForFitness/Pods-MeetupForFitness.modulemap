@@ -1,0 +1,6 @@
+framework module Pods_MeetupForFitness {
+  umbrella header "Pods-MeetupForFitness-umbrella.h"
+
+  export *
+  module * { export * }
+}

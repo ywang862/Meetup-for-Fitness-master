@@ -15,11 +15,25 @@
 		086B362C1E6BEDBB00D8DDDB /* MeetupForFitnessTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086B362B1E6BEDBB00D8DDDB /* MeetupForFitnessTests.swift */; };
 		086B36371E6BEDBB00D8DDDB /* MeetupForFitnessUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086B36361E6BEDBB00D8DDDB /* MeetupForFitnessUITests.swift */; };
 		086B36461E6C064500D8DDDB /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 086B36451E6C064500D8DDDB /* MapKit.framework */; };
-		4F92CA871E6D243D00F97CF9 /* DemoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F92CA861E6D243D00F97CF9 /* DemoCell.swift */; };
-		4F92CA891E6D246900F97CF9 /* FoldingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F92CA881E6D246900F97CF9 /* FoldingCell.swift */; };
-		4F92CA8F1E6D31A300F97CF9 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F92CA8E1E6D31A300F97CF9 /* MainTableViewController.swift */; };
-		4F92CA901E6D31A300F97CF9 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F92CA8E1E6D31A300F97CF9 /* MainTableViewController.swift */; };
-		4F92CA911E6D31A300F97CF9 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F92CA8E1E6D31A300F97CF9 /* MainTableViewController.swift */; };
+		086B364A1E6E4E5400D8DDDB /* FoldingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086B36471E6E4E5400D8DDDB /* FoldingCell.swift */; };
+		086B364B1E6E4E5400D8DDDB /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086B36481E6E4E5400D8DDDB /* MainTableViewController.swift */; };
+		086B364C1E6E4E5400D8DDDB /* DemoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086B36491E6E4E5400D8DDDB /* DemoCell.swift */; };
+		086D5C361E97644100689147 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086D5C351E97644100689147 /* NotificationViewController.swift */; };
+		086D5C381E97682900689147 /* TeamInviteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086D5C371E97682900689147 /* TeamInviteViewController.swift */; };
+		087B9B7B1E89F8FC0061CABA /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087B9B7A1E89F8FC0061CABA /* Activity.swift */; };
+		087B9B7D1E89FE460061CABA /* MainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087B9B7C1E89FE460061CABA /* MainPageViewController.swift */; };
+		087B9B7F1E8A210A0061CABA /* AttendButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087B9B7E1E8A210A0061CABA /* AttendButton.swift */; };
+		0892338E1E9745D900B72BF7 /* AddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0892338D1E9745D900B72BF7 /* AddButton.swift */; };
+		089233901E9747B200B72BF7 /* SearchUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0892338F1E9747B200B72BF7 /* SearchUserViewController.swift */; };
+		089233921E9747B700B72BF7 /* FriendAndTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089233911E9747B700B72BF7 /* FriendAndTeamViewController.swift */; };
+		089233941E974D9200B72BF7 /* CreateTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089233931E974D9200B72BF7 /* CreateTeamViewController.swift */; };
+		08A87F1D1E88DDA700685488 /* AddActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A87F1C1E88DDA700685488 /* AddActivityViewController.swift */; };
+		08A87F1F1E88DDC900685488 /* AddActivitySecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A87F1E1E88DDC900685488 /* AddActivitySecondViewController.swift */; };
+		08AA01051E88C2F400CECC9B /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08AA01041E88C2F400CECC9B /* SignupViewController.swift */; };
+		08D911431E99F64600052C01 /* UpdateUserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D911421E99F64600052C01 /* UpdateUserInfoViewController.swift */; };
+		08D911451E9A072E00052C01 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D911441E9A072E00052C01 /* UserProfileViewController.swift */; };
+		08D911471E9ACDFD00052C01 /* TeamMemberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D911461E9ACDFD00052C01 /* TeamMemberViewController.swift */; };
+		93D557B5025C2CE791E927AB /* Pods_MeetupForFitness.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68DFEBBF6DF330B1887082DA /* Pods_MeetupForFitness.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,9 +68,27 @@
 		086B36361E6BEDBB00D8DDDB /* MeetupForFitnessUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetupForFitnessUITests.swift; sourceTree = "<group>"; };
 		086B36381E6BEDBB00D8DDDB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		086B36451E6C064500D8DDDB /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		4F92CA861E6D243D00F97CF9 /* DemoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoCell.swift; sourceTree = "<group>"; };
-		4F92CA881E6D246900F97CF9 /* FoldingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoldingCell.swift; sourceTree = "<group>"; };
-		4F92CA8E1E6D31A300F97CF9 /* MainTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
+		086B36471E6E4E5400D8DDDB /* FoldingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoldingCell.swift; sourceTree = "<group>"; };
+		086B36481E6E4E5400D8DDDB /* MainTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
+		086B36491E6E4E5400D8DDDB /* DemoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoCell.swift; sourceTree = "<group>"; };
+		086D5C351E97644100689147 /* NotificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
+		086D5C371E97682900689147 /* TeamInviteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamInviteViewController.swift; sourceTree = "<group>"; };
+		087B9B7A1E89F8FC0061CABA /* Activity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
+		087B9B7C1E89FE460061CABA /* MainPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPageViewController.swift; sourceTree = "<group>"; };
+		087B9B7E1E8A210A0061CABA /* AttendButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttendButton.swift; sourceTree = "<group>"; };
+		0892338D1E9745D900B72BF7 /* AddButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddButton.swift; sourceTree = "<group>"; };
+		0892338F1E9747B200B72BF7 /* SearchUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchUserViewController.swift; sourceTree = "<group>"; };
+		089233911E9747B700B72BF7 /* FriendAndTeamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendAndTeamViewController.swift; sourceTree = "<group>"; };
+		089233931E974D9200B72BF7 /* CreateTeamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateTeamViewController.swift; sourceTree = "<group>"; };
+		08A87F1C1E88DDA700685488 /* AddActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddActivityViewController.swift; sourceTree = "<group>"; };
+		08A87F1E1E88DDC900685488 /* AddActivitySecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddActivitySecondViewController.swift; sourceTree = "<group>"; };
+		08AA01041E88C2F400CECC9B /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		08D911421E99F64600052C01 /* UpdateUserInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateUserInfoViewController.swift; sourceTree = "<group>"; };
+		08D911441E9A072E00052C01 /* UserProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
+		08D911461E9ACDFD00052C01 /* TeamMemberViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamMemberViewController.swift; sourceTree = "<group>"; };
+		68DFEBBF6DF330B1887082DA /* Pods_MeetupForFitness.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MeetupForFitness.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B905928E9EA7D65542EF932A /* Pods-MeetupForFitness.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeetupForFitness.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MeetupForFitness/Pods-MeetupForFitness.debug.xcconfig"; sourceTree = "<group>"; };
+		FDD34A4A6B050B334BC41DE0 /* Pods-MeetupForFitness.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeetupForFitness.release.xcconfig"; path = "Pods/Target Support Files/Pods-MeetupForFitness/Pods-MeetupForFitness.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +97,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				086B36461E6C064500D8DDDB /* MapKit.framework in Frameworks */,
+				93D557B5025C2CE791E927AB /* Pods_MeetupForFitness.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +118,74 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		080834C91EA480A500FDF696 /* Login and Sign up */ = {
+			isa = PBXGroup;
+			children = (
+				086B36181E6BEDBA00D8DDDB /* ViewController.swift */,
+				08AA01041E88C2F400CECC9B /* SignupViewController.swift */,
+			);
+			name = "Login and Sign up";
+			sourceTree = "<group>";
+		};
+		080834CA1EA480D500FDF696 /* Activities Page */ = {
+			isa = PBXGroup;
+			children = (
+				087B9B7C1E89FE460061CABA /* MainPageViewController.swift */,
+			);
+			name = "Activities Page";
+			sourceTree = "<group>";
+		};
+		080834CB1EA480F300FDF696 /* My Activities Page */ = {
+			isa = PBXGroup;
+			children = (
+				086B36481E6E4E5400D8DDDB /* MainTableViewController.swift */,
+			);
+			name = "My Activities Page";
+			sourceTree = "<group>";
+		};
+		080834CC1EA4811E00FDF696 /* Create New Activity */ = {
+			isa = PBXGroup;
+			children = (
+				08A87F1C1E88DDA700685488 /* AddActivityViewController.swift */,
+				08A87F1E1E88DDC900685488 /* AddActivitySecondViewController.swift */,
+			);
+			name = "Create New Activity";
+			sourceTree = "<group>";
+		};
+		080834CD1EA4817A00FDF696 /* Social Page */ = {
+			isa = PBXGroup;
+			children = (
+				08D911461E9ACDFD00052C01 /* TeamMemberViewController.swift */,
+				086D5C371E97682900689147 /* TeamInviteViewController.swift */,
+				089233931E974D9200B72BF7 /* CreateTeamViewController.swift */,
+				0892338F1E9747B200B72BF7 /* SearchUserViewController.swift */,
+				089233911E9747B700B72BF7 /* FriendAndTeamViewController.swift */,
+			);
+			name = "Social Page";
+			sourceTree = "<group>";
+		};
+		080834CE1EA481C400FDF696 /* Profile Page */ = {
+			isa = PBXGroup;
+			children = (
+				08D911421E99F64600052C01 /* UpdateUserInfoViewController.swift */,
+				086D5C351E97644100689147 /* NotificationViewController.swift */,
+				08D911441E9A072E00052C01 /* UserProfileViewController.swift */,
+			);
+			name = "Profile Page";
+			sourceTree = "<group>";
+		};
+		080834CF1EA481F800FDF696 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0892338D1E9745D900B72BF7 /* AddButton.swift */,
+				087B9B7E1E8A210A0061CABA /* AttendButton.swift */,
+				086B36491E6E4E5400D8DDDB /* DemoCell.swift */,
+				086B36471E6E4E5400D8DDDB /* FoldingCell.swift */,
+				087B9B7A1E89F8FC0061CABA /* Activity.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		086B360A1E6BEDBA00D8DDDB = {
 			isa = PBXGroup;
 			children = (
@@ -93,6 +194,7 @@
 				086B36351E6BEDBB00D8DDDB /* MeetupForFitnessUITests */,
 				086B36141E6BEDBA00D8DDDB /* Products */,
 				086B36441E6C064500D8DDDB /* Frameworks */,
+				D97F9FFB4A3E3925224F27E9 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -109,14 +211,17 @@
 		086B36151E6BEDBA00D8DDDB /* MeetupForFitness */ = {
 			isa = PBXGroup;
 			children = (
-				086B36161E6BEDBA00D8DDDB /* AppDelegate.swift */,
-				4F92CA881E6D246900F97CF9 /* FoldingCell.swift */,
-				4F92CA8E1E6D31A300F97CF9 /* MainTableViewController.swift */,
-				086B36181E6BEDBA00D8DDDB /* ViewController.swift */,
-				4F92CA861E6D243D00F97CF9 /* DemoCell.swift */,
+				080834C91EA480A500FDF696 /* Login and Sign up */,
+				080834CA1EA480D500FDF696 /* Activities Page */,
+				080834CB1EA480F300FDF696 /* My Activities Page */,
+				080834CC1EA4811E00FDF696 /* Create New Activity */,
+				080834CD1EA4817A00FDF696 /* Social Page */,
+				080834CE1EA481C400FDF696 /* Profile Page */,
+				080834CF1EA481F800FDF696 /* Models */,
 				086B361A1E6BEDBA00D8DDDB /* Main.storyboard */,
-				086B361D1E6BEDBA00D8DDDB /* Assets.xcassets */,
 				086B361F1E6BEDBA00D8DDDB /* LaunchScreen.storyboard */,
+				086B36161E6BEDBA00D8DDDB /* AppDelegate.swift */,
+				086B361D1E6BEDBA00D8DDDB /* Assets.xcassets */,
 				086B36221E6BEDBA00D8DDDB /* Info.plist */,
 			);
 			path = MeetupForFitness;
@@ -144,8 +249,18 @@
 			isa = PBXGroup;
 			children = (
 				086B36451E6C064500D8DDDB /* MapKit.framework */,
+				68DFEBBF6DF330B1887082DA /* Pods_MeetupForFitness.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D97F9FFB4A3E3925224F27E9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B905928E9EA7D65542EF932A /* Pods-MeetupForFitness.debug.xcconfig */,
+				FDD34A4A6B050B334BC41DE0 /* Pods-MeetupForFitness.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -155,9 +270,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 086B363B1E6BEDBB00D8DDDB /* Build configuration list for PBXNativeTarget "MeetupForFitness" */;
 			buildPhases = (
+				21EA26B07B6AC830F940440C /* [CP] Check Pods Manifest.lock */,
 				086B360F1E6BEDBA00D8DDDB /* Sources */,
 				086B36101E6BEDBA00D8DDDB /* Frameworks */,
 				086B36111E6BEDBA00D8DDDB /* Resources */,
+				08A56216D96DEF17938EDEC0 /* [CP] Embed Pods Frameworks */,
+				44A85DD3F291D9F655C6E18D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -280,16 +398,79 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		08A56216D96DEF17938EDEC0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MeetupForFitness/Pods-MeetupForFitness-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		21EA26B07B6AC830F940440C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		44A85DD3F291D9F655C6E18D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MeetupForFitness/Pods-MeetupForFitness-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		086B360F1E6BEDBA00D8DDDB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				087B9B7D1E89FE460061CABA /* MainPageViewController.swift in Sources */,
+				089233901E9747B200B72BF7 /* SearchUserViewController.swift in Sources */,
+				08D911451E9A072E00052C01 /* UserProfileViewController.swift in Sources */,
+				08D911471E9ACDFD00052C01 /* TeamMemberViewController.swift in Sources */,
+				086D5C361E97644100689147 /* NotificationViewController.swift in Sources */,
+				08AA01051E88C2F400CECC9B /* SignupViewController.swift in Sources */,
+				08D911431E99F64600052C01 /* UpdateUserInfoViewController.swift in Sources */,
+				089233921E9747B700B72BF7 /* FriendAndTeamViewController.swift in Sources */,
+				086D5C381E97682900689147 /* TeamInviteViewController.swift in Sources */,
+				08A87F1F1E88DDC900685488 /* AddActivitySecondViewController.swift in Sources */,
+				0892338E1E9745D900B72BF7 /* AddButton.swift in Sources */,
+				086B364B1E6E4E5400D8DDDB /* MainTableViewController.swift in Sources */,
 				086B36191E6BEDBA00D8DDDB /* ViewController.swift in Sources */,
 				086B36171E6BEDBA00D8DDDB /* AppDelegate.swift in Sources */,
-				4F92CA871E6D243D00F97CF9 /* DemoCell.swift in Sources */,
-				4F92CA8F1E6D31A300F97CF9 /* MainTableViewController.swift in Sources */,
-				4F92CA891E6D246900F97CF9 /* FoldingCell.swift in Sources */,
+				087B9B7F1E8A210A0061CABA /* AttendButton.swift in Sources */,
+				08A87F1D1E88DDA700685488 /* AddActivityViewController.swift in Sources */,
+				087B9B7B1E89F8FC0061CABA /* Activity.swift in Sources */,
+				086B364A1E6E4E5400D8DDDB /* FoldingCell.swift in Sources */,
+				086B364C1E6E4E5400D8DDDB /* DemoCell.swift in Sources */,
+				089233941E974D9200B72BF7 /* CreateTeamViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,7 +478,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4F92CA901E6D31A300F97CF9 /* MainTableViewController.swift in Sources */,
 				086B362C1E6BEDBB00D8DDDB /* MeetupForFitnessTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -306,7 +486,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4F92CA911E6D31A300F97CF9 /* MainTableViewController.swift in Sources */,
 				086B36371E6BEDBB00D8DDDB /* MeetupForFitnessUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -439,6 +618,7 @@
 		};
 		086B363C1E6BEDBB00D8DDDB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B905928E9EA7D65542EF932A /* Pods-MeetupForFitness.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = K5BR2FF6XK;
@@ -452,6 +632,7 @@
 		};
 		086B363D1E6BEDBB00D8DDDB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FDD34A4A6B050B334BC41DE0 /* Pods-MeetupForFitness.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = K5BR2FF6XK;

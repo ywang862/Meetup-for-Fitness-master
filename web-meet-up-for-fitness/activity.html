@@ -1,0 +1,213 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>waterfall</title>
+	      <link rel="stylesheet" href="css/activity.css">
+	      <link rel="stylesheet" href="css/colorbox.css" />
+		  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.2.0/jquery-confirm.min.css">
+
+
+	<style type="text/css">
+
+	@import url(http://fonts.googleapis.com/css?family=Oswald);
+
+  html body{
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin-top: 10px;
+  }
+		body{
+			  -webkit-background-size: cover;
+			  -moz-background-size: cover;
+			  -o-background-size: cover;
+			background:url("img/basketball_background.jpg") no-repeat center center fixed;;
+			background-size:cover;
+			font-family: 'Oswald', sans-serif;
+
+		}
+		.waterfall{
+			margin-top: 30px;
+			width: 730px;
+			position: relative;
+			margin: 0 auto;
+		}
+		.waterfall .gird{
+			position: absolute;
+			width: 230px;
+			background-color: white;
+			border-radius: 15px;
+		}
+		.waterfall p{
+			line-height: 150%;
+			font-size: 16px;
+		}
+		.waterfall .share{
+			padding: 10px;
+			line-height: 150%;
+			font-size: 	14px;
+		}
+
+	.btn{
+
+    margin: 40px;
+    margin-left: 250px;
+
+    box-shadow: 1px 1px 5px #888888;
+	}
+
+
+	.btn-sunny {
+		margin-left: 500px;
+	color: #fff;
+	background-color: #f4ad49;
+	border-bottom:2px solid #c38a3a;
+	}
+
+	.btn-sunny:hover, .btn-sky.active:focus, .btn-sunny:focus, .open>.dropdown-toggle.btn-sunny {
+	color: #fff;
+	background-color: #f5b75f;
+	border-bottom:2px solid #c4924c;
+	outline: none;
+	}
+
+
+	.btn-sunny:active, .btn-sunny.active {
+	color: #fff;
+	background-color: #d69840;
+	border-top:2px solid #ab7a33;
+	margin-top: 2px;
+	}
+
+
+
+	.btn-sky {
+	color: #fff;
+	background-color: #0bacd3;
+	border-bottom:2px solid #098aa9;
+	}
+
+	.btn-sky:hover,.btn-sky.active:focus, .btn-sky:focus, .open>.dropdown-toggle.btn-sky {
+	color: #fff;
+	background-color: #29b6d8;
+	border-bottom:2px solid #2192ad;
+	outline: none;
+	}
+
+	.btn-sky:active, .btn-sky.active {
+	color: #fff;
+	background-color: #0a97b9;
+	border-top:2px solid #087994;
+	outline-offset: none;
+	margin-top: 2px;
+	}
+
+	.btn:focus,
+	.btn:active:focus,
+	.btn.active:focus {
+	    outline: none;
+	    outline-offset: 0px;
+	}
+	.sports {
+		background: url('img/sports.jpg') no-repeat;
+		background-size:contain;
+
+		height: 150px;
+		width: 230px;
+	}
+
+
+
+
+	</style>
+</head>
+<body>
+	<div class="ACon">
+	    <div class="Profile">
+	        <div class="Img">
+	            <div class="overlay">
+	              <span><img /></span>
+	            </div>
+	        </div>
+	        <div class="PopUp">Open Profile</div>
+
+	            <div class="clickPopUp">
+	                <h4><a class="username" href=""></a></h4>
+	                <h5 class="buttons"><a class="username" href='javascript:;' onclick='lightbox();'>Create My Activity</a></h5>
+	                <h5 class="buttons"><a class="username" href='javascript:;' onclick='lightbox2();'>Create Team Activity</a></h5>
+	                <h5 class="buttons"><a class="username"href='javascript:;' onclick='lightbox3();'>Profile</a></h5>
+	                <h5 class="buttons b"><a class="username" href="index.html">Log Out</a></h5>
+	            </div>
+	    </div>
+	</div>
+		 <div class="well text-center">
+            <button onclick="team_activity_trigger()" type="button" class="btn btn-sunny text-uppercase">Team Activity</button>
+            <button onclick="my_activity_trigger()" type="button" class="btn btn-sky text-uppercase">My Activity</button>
+        </div>
+	<div class="waterfall" id="waterfall">
+
+	<script type="text/template" id="template">
+		<div class="gird">
+			<a href="javascript:;">
+				<div class='sports'>
+				</div>
+			</a>
+			<div class="share" id = "activity_add_on">
+				<p><b><%=aName%></b></p>
+				<p><b>Created By: </b><%=username%></p>
+				<p><b>Sports Type: </b><%=sportsType%></p>
+				<p><b>Activity Time: </b><%=aTime%></p>
+				<p><b>Location: </b><%=location%></p>
+				<p><b>People Attended: </b><%=attended.length%>/<%=maxPeople%>
+				<button id="join_activity" onclick="return attend_activity(<%=aid%>)">Attend</button> 
+
+			</div>
+		</div>
+	</script>
+
+	</div>
+
+	<script type="text/javascript" src="js/jquery-1.12.3.min.js"></script>
+	<script type="text/javascript" src="js/underscore.js"></script>
+
+	<script type="text/javascript">
+	$(document).ready(function(){
+		getWaterfall();
+	});
+
+	</script>
+	    <script>
+
+		function my_activity_userId_retrieve()
+			{
+			    var userId = getQueryVariable("userId");
+			    return userId;
+			 }
+        function lightbox(){
+        	var userId = my_activity_userId_retrieve();
+          	$.colorbox({width:"35%", height:"80%", iframe:true, href:"create_new_activity.html?userId=" + userId
+
+        });
+        }
+				function lightbox2(){
+					var userId = my_activity_userId_retrieve();
+						$.colorbox({width:"35%", height:"80%", iframe:true, href:"create_new_team_activity.html?userId=" + userId
+
+				});
+				}
+				function lightbox3(){
+					var userId = my_activity_userId_retrieve();
+						$.colorbox({width:"40%", height:"80%", iframe:true, href:"profile2.html?userId=" + userId
+
+				});
+				}
+    </script>
+        <script src="js/jquery.colorbox.js"></script>
+        <script src="js/activity.js"></script>
+	    <script src="js/index.js"></script>
+	    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.2.0/jquery-confirm.min.js"></script>
+
+
+</body>
+</html>

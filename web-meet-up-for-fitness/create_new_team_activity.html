@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+
+
+
+<link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css'>
+<link rel='stylesheet prefetch' href='http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.0/css/bootstrapValidator.min.css'>
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+            <link rel="stylesheet" href="css/style-again.css">
+
+      <link rel="stylesheet" href="css/form-style.css">
+      <link rel="stylesheet" href="css/bootstrap-datetimepicker.css">
+
+    <link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
+
+</head>
+
+<body>
+  <div class="container">
+
+    <form class="well form-horizontal" method="post"  id="contact_form" >
+<fieldset>
+
+<!-- Form Name -->
+<legend align='center'>Create new team activity</legend>
+
+<!-- Text input-->
+
+<div class="form-group">
+  <label class="col-md-4 control-label">Activity Info</label>  
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-star-empty"></i></span>
+  <input id= "activity_info" name="activity_info" placeholder="fun game" class="form-control" type="text">
+    </div>
+  </div>
+</div>
+<div class="form-group">
+  <label class="col-md-4 control-label">Activity Name</label>  
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-hand-up"></i></span>
+  <input id= "activity_name_input" name="activity_name" placeholder="5 on 5 Basketball" class="form-control" type="text">
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-md-4 control-label">Related Sports</label>  
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-tasks"></i></span>
+        <select id='sports-type' name="state" class="form-control selectpicker" >
+          <option value=" " >Please select Sport Types</option>
+          <option>badminton</option>
+          <option>basketball</option>
+          <option>soccer</option>
+          <option>table tennis</option>
+         </select>    
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="form-group">
+  <label class="col-md-4 control-label">Time</label>  
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+                <div id='time-se' class="input-append date form_datetime" data-date-format="dd MM yyyy, hh:ii p" data-link-field="dtp_input1">
+
+                      <input name = 'timefield' class='form-control' id='time-input' type="text" value="" placeholder="Please select the time of the activity">
+                      <span class="add-on"><i class="icon-remove"></i></span>
+                      <span class="add-on"><i class="icon-th"></i></span>
+                </div>
+                    <input type="hidden" id="dtp_input1" value="" /><br/>
+        </div>
+    </div>
+</div>
+
+<div class="form-group">
+  <label class="col-md-4 control-label">Friends Invited</label>  
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+          <select id='se-control' name="friends" class="form-control selectpicker" >
+          <option value=" " >Please select friends you want to go with</option>
+         </select>  
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-md-4 control-label">Team Invitation</label>
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+          <select id='team_name' name="teamname" class="form-control selectpicker" >
+          <option value=" " >Please select the team ID to create the game</option>
+         </select>
+    </div>
+  </div>
+</div>
+
+
+<div class="form-group">
+  <label class="col-md-4 control-label">Maximum Attendance</label>  
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-plus-sign"></i></span>
+  <input id="maximum" name="people" placeholder="5" class="form-control" type="text">
+    </div>
+  </div>
+</div>
+
+<!-- Text input-->
+      
+<div class="form-group">
+  <label class="col-md-4 control-label">Activity Location</label>  
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+  <input id="autocomplete" name="address" placeholder="Address" onFocus="geolocate()" class="form-control" type="text">
+    </div>
+    <div id="map"></div>
+  </div>
+</div>
+
+
+<!-- Text input-->
+
+
+<!--
+    <input id="pac-input" class="controls" type="text" placeholder="Search Box">
+    <div id="map"></div>
+ -->
+
+<!-- Success message -->
+<div class="alert alert-success" role="alert" id="success_message">Success <i class="glyphicon glyphicon-thumbs-up"></i> Thanks for contacting us, we will get back to you shortly.</div>
+
+<!-- Button -->
+<div class="form-group">
+  <label class="col-md-4 control-label"></label>
+  <div class="col-md-4">
+    <button type="submit" id="submit_activity_id"class="btn btn-warning" >Send <span class="glyphicon glyphicon-send"></span></button>
+  </div>
+</div>
+
+</fieldset>
+</form>
+</div>
+</div><!-- /.container -->
+
+<script>
+// This example displays an address form, using the autocomplete feature
+// of the Google Places API to help users fill in the information.
+
+var placeSearch, autocomplete;
+var componentForm = {
+  street_number: 'short_name',
+  route: 'long_name',
+  locality: 'long_name',
+  administrative_area_level_1: 'short_name',
+  country: 'long_name',
+  postal_code: 'short_name'
+};
+
+function initAutocomplete() {
+  // Create the autocomplete object, restricting the search to geographical
+  // location types.
+  autocomplete = new google.maps.places.Autocomplete(
+      /** @type {!HTMLInputElement} */(document.getElementById('autocomplete')),
+      {types: ['geocode']});
+
+  // When the user selects an address from the dropdown, populate the address
+  // fields in the form.
+}
+
+
+// [START region_geolocation]
+// Bias the autocomplete object to the user's geographical location,
+// as supplied by the browser's 'navigator.geolocation' object.
+function geolocate() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(position) {
+      var geolocation = {
+        lat: position.coords.latitude,
+        lng: position.coords.longitude
+      };
+      var circle = new google.maps.Circle({
+        center: geolocation,
+        radius: position.coords.accuracy
+      });
+      autocomplete.setBounds(circle.getBounds());
+    });
+  }
+}
+// [END region_geolocation]
+
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAOsISGlbKqU8yEJkU4y1p555bIulzF2oQ&libraries=places&callback=initAutocomplete"async defer></script>
+
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js'></script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.4.5/js/bootstrapvalidator.min.js'></script>
+
+<script type="text/javascript" src="js/moment.js"></script>
+<script type="text/javascript" src="js/transition.js"></script>
+<script type="text/javascript" src="js/collapse.js"></script>
+<script type="text/javascript" src="js/bootstrap-datetimepicker.min.js"></script>
+
+<script type="text/javascript">
+    $('.form_datetime').datetimepicker({
+        weekStart: 1,
+        todayBtn:  1,
+        autoclose: 1,
+        todayHighlight: 1,
+        startView: 2,
+        forceParse: 0,
+        showMeridian: 1
+    });
+
+
+</script>
+
+
+
+
+    <script src="js/create_team_activity.js"></script>
+
+</body>
+</html>
